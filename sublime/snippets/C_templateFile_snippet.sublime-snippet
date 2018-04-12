@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+/****************************************************************************************************/
+/**
+\file       ${1:$TM_FILENAME}.c
+\brief      ${2:FileDescription}
+\author     ${3:Salvador Zendejas}
+\version    ${4:1.0}
+\date       ${5:5/07/17}
+*/
+/****************************************************************************************************/
+
+/*****************************************************************************************************
+* Include files
+*****************************************************************************************************/
+
+/** Principal header of the file */
+#include    "$1.h"
+
+/*****************************************************************************************************
+* Definition of  VARIABLEs -
+*****************************************************************************************************/
+
+$6
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cTemp</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.c</scope> -->
+	<!-- <scope>source.c++</scope> -->
+	<description>Template C file</description>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+/** ${1:vfnName} ${5:ShortDescription_function_handler} */
+${2:uint8} ${1/^(\w)|(?: (\w))/(?1\L$1:)(?2_\E$2:)/g} ( ${3:uint8}${4:u8Name});
+
+]]></content>
+	<!-- ${1:vfnName}: The substitution makes the first letter a lower case and substitute any space for "_" -->
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>protfun1</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope> -->
+	<scope>source.c++</scope> -->
+	<description>prototype type_return function 1 param</description>
+</snippet>

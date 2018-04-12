@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+/****************************************************************************************************/
+/**
+* \brief    ${9:Description...}
+* \author   ${10:Salvador Zendejas}
+* \param    $3 $4 - ${11:paramDescription }
+* \param    $5 $6 - ${12:paramDescription }
+* \param    $7 $8 - ${13:paramDescription }
+* \return   $2${14:- }
+* \todo
+*/
+${2:uint8} ${1:vfnName} ( ${3:uint8} ${4:u8Name}, ${5:uint8} ${6:u8Name}, ${7:uint8} ${8:u8Name})
+{
+	${15:/*code_here*/}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>func3</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope> -->
+	<scope>source.c++</scope> -->
+	<description>prototype function with 3 params</description>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+/****************************************************************************************************/
+/**
+* \brief    ${5:Description...}
+* \author   ${6:$TM_FULLNAME}
+* \param    $3${7:- }
+* \return   $2${8:- }
+* \todo
+*/
+${2:void} ${1:vfnName} ( ${3:void${4}})
+{
+	${9:/*code_here*/}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>funcv</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope> -->
+	<scope>source.c++</scope> -->
+	<description>prototype void function</description>
+</snippet>
