@@ -1,0 +1,167 @@
+{
+	"Starter C file template": {
+		"prefix": [
+			"copyright",
+			"boilerplate"
+		],
+		"body": [
+			"/*******************************************************************************",
+			" * Copyright (C) ${CURRENT_YEAR} by Salvador Z                                            *",
+			" *                                                                             *",
+			" * This file is part of ${3:Project}                                                *",
+			" *                                                                             *",
+			" *   Permission is hereby granted, free of charge, to any person obtaining a   *",
+			" *   copy of this software and associated documentation files (the Software)   *",
+			" *   to deal in the Software without restriction including without limitation  *",
+			" *   the rights to use, copy, modify, merge, publish, distribute, sublicense,  *",
+			" *   and/or sell copies ot the Software, and to permit persons to whom the     *",
+			" *   Software is furnished to do so, subject to the following conditions:      *",
+			" *                                                                             *",
+			" *   The above copyright notice and this permission notice shall be included   *",
+			" *   in all copies or substantial portions of the Software.                    *",
+			" *                                                                             *",
+			" *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS   *",
+			" *   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARANTIES OF MERCHANTABILITY *",
+			" *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL   *",
+			" *   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR      *",
+			" *   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,     *",
+			" *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE        *",
+			" *   OR OTHER DEALINGS IN THE SOFTWARE.                                        *",
+			" ******************************************************************************/",
+			"",
+			" ${BLOCK_COMMENT_START}*",
+			" * @file ${TM_FILENAME}",
+			" * @author Salvador Z",
+			" * @date ${CURRENT_DATE} ${CURRENT_MONTH_NAME_SHORT} ${CURRENT_YEAR}",
+			" * @brief File for ${1:$TM_FILENAME_BASE}",
+			" *",
+			" * ${2:@see https://linux.die.net/man/3/setsid}",
+			" ${BLOCK_COMMENT_END}",
+			"",
+			"#include <stdio.h>     /*streams> fopen, fputs*/",
+			"$0"
+		],
+		"description": "Starter C file template"
+	},
+  "Default C header template": {
+		"prefix": "header_template",
+		"body": [
+			" ${BLOCK_COMMENT_START}*",
+			" * @file ${TM_FILENAME}",
+			" * @author Salvador Z",
+			" * @version ${1:1.0}",
+			" * @brief File for ${2:$TM_FILENAME_BASE}",
+			" *",
+			" ${BLOCK_COMMENT_END}",
+			"",
+			"#ifndef ${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g}",
+			"#define ${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g}",
+			"",
+			"// Includes",
+			"$0",
+			"#endif /* ${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g} */"
+		],
+		"description": "Default C header template"
+	},
+	"Standard main Template": {
+		"prefix": "main_args",
+		"body": [
+			"",
+			"int main (${1:int argc, char* argv[]}) {",
+			"  $0",
+			"    return 0;",
+			"}"
+		],
+		"description": "A standard main template for a C program"
+	},
+  "Doxygen doc type for functions": {
+		"prefix": "doxygen_doc_fn",
+		"body": [
+			"/**",
+			"* \\brief    ${4:Description...}",
+			"* \\param    ${1:arg} - ${2:paramDescription }",
+			"* \\return   ${3:- }",
+			"* \\todo",
+			"*/"
+		],
+		"description": "Doxygen doc type for functions"
+	},
+	"Else if statement": {
+		"prefix": "elif",
+		"body": [
+			"else if (${1:condition}) {",
+			"    ${2:/* code here */}",
+			"}",
+			"$0"
+		],
+		"description": "Creates an else if statement"
+	},
+	"Else statement": {
+		"prefix": "else",
+		"body": [
+			"else {",
+			"    ${1:/* code here */}",
+			"}",
+			"$0"
+		],
+		"description": "Creates an else statement"
+	},
+	"Create void function": {
+		"prefix": "vfn",
+		"body": [
+			"void ${1:vfnName}(${2:type *args}) {",
+			"    ",
+			"    $0",
+			"}"
+		],
+		"description": "Creates a void function"
+	},
+	"Create int function": {
+		"prefix": "intfn",
+		"body": [
+			"uint32_t ${1:u32fn_name}(${2:args}) {",
+			"    uint32_t ${3:return_u32_val}${4: = 0U};",
+			"    $0",
+			"    return ${3:return_u32_val};",
+			"}"
+		],
+		"description": "Creates a function that returns the uint32_t type"
+	},
+	"Create bool function": {
+		"prefix": "boolfn",
+		"body": [
+			"bool ${1:function_name}(${2:args}) {",
+			"    bool ${3:return_bool_val}${4: = false};",
+			"    $0",
+			"    return ${3:return_bool_val};",
+			"}"
+		],
+		"description": "Creates a function that returns the bool type"
+	},
+	"Create custom function": {
+		"prefix": "custom fn",
+		"body": [
+			"${3:base_t} ${1:function_name}(${2:args}) {",
+			"    ${3:base_t} ${4:return_val}${5: = 0U};",
+			"    $0",
+			"    return ${4:return_val};",
+			"}"
+		],
+		"description": "Creates a function that returns the custom type"
+	},
+	"Allocate memory using calloc": {
+		"prefix": "caloc template",
+		"body": [
+			"${1:type} *${2:ptr} = (${1:type}*)calloc(${3:N_ELEM}, sizeof(${1:type}));",
+			"",
+			"if (NULL == ${2:ptr})",
+			"{",
+			"  ${4:/* Memory allocation failed */",
+			"  exit(1);",
+			"}",
+			"$0",
+			"free(${2:ptr});"
+		],
+		"description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+	},
+}
