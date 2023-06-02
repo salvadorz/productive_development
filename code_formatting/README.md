@@ -47,10 +47,41 @@ clang-format --style=llvm -dump-config > .clang-format
 
 You can install this extension. And put the .clang-format file at same parent directory of the workspace.
 
-| Name        | Ctrl+p        |
-| ----------- |:-------------:|
-| *clangd*    | `ext install llvm-vs-code-extensions.vscode-clangd` |
+| Name           | Ctrl+p        |
+| -------------- |:-------------:|
+| *clangd*       | `ext install llvm-vs-code-extensions.vscode-clangd` |
+| *Clang-Format* | `ext install xaver.clang-format` |
 
+#### Settings
+```json
+{
+    /*-------------------- GLOBAL EDITOR CONFIGURATIONS ------------------*/
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true, //format while typing
+    "editor.rulers": [
+        120
+    ],
+    /*----------------------------- C++ ----------------------------------*/
+    "C_Cpp.autocomplete": "disabled",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.intelliSenseEngine": "default",
+    //if installed with Python e.g. pip install clang-format and extension xaver.clang-format
+    "clang-format.executable": "/home/gud/.local/bin/clang-format",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    //clangd
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=never",
+        "--suggest-missing-includes",
+        "--compile-commands-dir=build/"
+    ]
+}
+```
 
 ### `git-clang-format`
 Using code formatting in a project with legacy code may yield unfavorable results, and it might be more beneficial to explore alternative tools. git-clang-format will format only the code that is touched (refactored). Basically only the changes intended to be commit-ed will receive the formatting.
