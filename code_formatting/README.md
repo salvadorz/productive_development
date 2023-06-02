@@ -86,6 +86,8 @@ You can install this extension. And put the .clang-format file at same parent di
 ### `git-clang-format`
 Using code formatting in a project with legacy code may yield unfavorable results, and it might be more beneficial to explore alternative tools. git-clang-format will format only the code that is touched (refactored). Basically only the changes intended to be commit-ed will receive the formatting.
 
+More info regarding to put on your pre-commit hooks [here](https://ortogonal.github.io/cpp/git-clang-format/)
+
 ## Online Resources
 * _online_ [clang-format builder](https://zed0.co.uk/clang-format-configurator/)
 * [Base Styles Coding comparator](https://github.com/motine/cppstylelineup)
